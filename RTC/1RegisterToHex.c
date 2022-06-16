@@ -19,7 +19,7 @@ int main(){
   if ((a & 0x80) != 0)
     usleep(1984);
 
-  outb(0x012, P);
+  outb(0x09, P);
   seg = inb(P+1);
   printf("%02x",seg);
 
