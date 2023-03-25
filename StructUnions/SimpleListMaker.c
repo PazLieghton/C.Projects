@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#define MAX 1000
 
 struct list
 {	int snumber;//Student Number//
@@ -32,7 +31,10 @@ void show_everything(struct list list[], int amount){
 int main()
 {
 	int n, i;
-	struct list l[MAX];
+	printf("Please submit the amount of students: \n");
+	scanf ("%d", &n);
+	
+	struct list l[n];
 	FILE *outfile;
 	outfile = fopen ("students.dat", "w");
 	if (outfile == NULL){
@@ -40,9 +42,7 @@ int main()
 		exit(1);
 	}
 	
-	printf("Please submit the amount of students: \n");
-	scanf ("%d", &n);
-	
+
 	for ( i = 1; i < n + 1; i++){
 		printf("Student Number:\n");
 	        scanf("%d", &l[i].snumber);
