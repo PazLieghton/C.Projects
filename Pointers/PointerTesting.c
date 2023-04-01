@@ -18,6 +18,15 @@ int main (){
 	
 	printf("%d the value of ""i""\n\n",i); 
 	
+	/*2 - What's wrong with these lines of code*/
+	
+	/*char c = 'A'*/
+	/*double *p = &c*/
+	
+	char c = 'a';
+	char *j = &c;
+	
+	
 	
 
 
