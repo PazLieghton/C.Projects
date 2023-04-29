@@ -25,13 +25,49 @@ nodo *insert_lifo(nodo *l, int d){
 	return new;
 }
 
-void user_input(nodo *l){
-
-	printf("\n");
+void user_input_lifo(nodo **l){
+	int i,c;
+	int imp;
+	printf("\nHow many numbers do you want to add?: ");
+	scanf("%d",&c);
+	for (i = 1; i<=c ; i++){
+		printf("\nInsert Number: ");
+		scanf("%d",&imp);
+		*l = insert_lifo(*l,imp);
+	}
 }
 
+//5
 
+nodo *insert_fifo(nodo *l, int d){
+	nodo *new, *p;
+	new = (nodo*)malloc(sizeof(nodo));
+	new -> data = d;
+	new -> sig = NULL;
+	if (l == NULL){
+		return new;
+	}
+	p = l;
+	while(p -> sig != NULL){
+		p = p->sig;
+	}
+	p -> sig = new;
+	return l;
+}
 
+//Num Counter
+
+void user_input_fifo(nodo **l){
+	int i,c;
+	int imp;
+	printf("\nHow many numbers do you want to add?: ");
+	scanf("%d",&c);
+	for (i = 1; i<=c ; i++){
+		printf("\nInsert Number: ");
+		scanf("%d",&imp);
+		*l = insert_fifo(*l,imp);
+	}
+}
 //Generic Function for showing a simple linked list//
 
 void show(nodo *l){
@@ -53,7 +89,7 @@ int main(){
 	printf("1 - To add x amount of numbers to a simple linked lists in LIFO\n");
 	printf("2 - To return the amount of elements in the current list\n");
 	printf("3 - To return the odds and pairs of numbers in a linked list\n");
-	printf("4 - A function that allows fifo insertion\n");
+	printf("4 - A function that allows fifo insertion for x number of elements\n");
 	printf("5 - Show the function\n");
 	printf("PRESS E TO EXIT\n");
 
@@ -65,7 +101,7 @@ int main(){
         switch (switcher) {
             case 1:
                 printf("You entered 1.\n");
-                lista = insert_lifo(lista, 1);
+                user_input_lifo(&lista);
                 break;
             case 2:
                 printf("You entered 2.\n");
@@ -75,6 +111,7 @@ int main(){
                 break;
             case 4:
                 printf("You entered 4.\n");
+                user_input_fifo(&lista);
                 break;
             case 5:
             	printf("You entered 5.Show program\n");
