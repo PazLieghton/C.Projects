@@ -88,6 +88,33 @@ void ordenarListaEdad(lista* l) {
     }
 }
 
+void eliminarNodo(lista* l, const char* nombre) {
+    nodo_d* actual = l->prim;
+
+    while (actual != NULL) {
+        if (strcmp(actual->nombre, nombre) == 0) {
+            if (actual->ant != NULL) {
+                actual->ant->sig = actual->sig;
+            }
+            else {
+                l->prim = actual->sig;
+            }
+            if (actual->sig != NULL) {
+                actual->sig->ant = actual->ant;
+            }
+            if (actual == l->ult) {
+                l->ult = actual->ant;
+            }
+            free(actual);
+            printf("El cliente con el nombre '%s' ha sido eliminado de la lista.\n", nombre);
+            return;
+        }
+        actual = actual->sig;
+    }
+
+    printf("El cliente con el nombre '%s' no fue encontrado en la lista.\n", nombre);
+}
+
 int main() {
     int num, i;
     char nombre[100];
@@ -223,6 +250,20 @@ int main() {
             case 6:
                 printf("Seleccionaste 6. Ordenando la lista por edad...\n");
                 ordenarListaEdad(&l);
+                mostrarLista(l);
+                break;
+
+            case 7:
+                printf("Seleccionaste 7. Eliminar un dato de la lista principal.\n");
+                if (l.prim == NULL) {
+                    printf("La lista está vacía.\n");
+                    break;
+                }
+                printf("Ingrese el nombre a eliminar: ");
+                getchar();
+                fgets(nombre, sizeof(nombre), stdin);
+                nombre[strcspn(nombre, "\n")] = '\0';
+                eliminarNodo(&l, nombre);
                 mostrarLista(l);
                 break;
 

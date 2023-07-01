@@ -5,24 +5,24 @@ Escriba un programa en C para resolver el enunciado descrito a continuación:
 La dueña de una pizzería de la ciudad nos pidió un programa de computadora para tener un control básico de los pedidos, precios y pizzas que se venden en su local. Nos aclaró que vende solamente 10 variedades de pizzas.
 
 En particular, lo que necesita es un programa que le permita, mediante un menú repetitivo de opciones, hacer lo siguiente:
-1.	Cargar los 10 nombres de productos (char 20) y su precios unitarios (float), contenidos en el archivo "precioproductos.dat". 
+1.  Cargar los 10 nombres de productos (char 20) y su precios unitarios (float), contenidos en el archivo "precioproductos.dat". 
 Aclaración: Usted deberá cargarlos en una estructura de datos apropiada, la que usted crea conveniente. 
 Aclaración sobre el archivo: Los datos se guardaron en el archivo en el orden mencionado: producto: char [20], precio: float.
-2.	Permitir cargar un nuevo pedido a la lista de pedidos, por orden de llegada, con los siguientes datos:
-o	numpedido (valor entero)
-o	numcombo (valor entero, del 1 al 10) -> los números del 1 al 10 identificarán los distintos tipos de pizzas.
-o	cantidad (valor entero)
-o	totalapagar (valor decimal, calculado a partir de los precios que tendrá la lista o vector de productos/precios)
-3.	Mostrar:
+2.  Permitir cargar un nuevo pedido a la lista de pedidos, por orden de llegada, con los siguientes datos:
+o   numpedido (valor entero)
+o   numcombo (valor entero, del 1 al 10) -> los números del 1 al 10 identificarán los distintos tipos de pizzas.
+o   cantidad (valor entero)
+o   totalapagar (valor decimal, calculado a partir de los precios que tendrá la lista o vector de productos/precios)
+3.  Mostrar:
 a) Los nombres (char 20) de los 10 tipos de pizzas que ofrecen para la venta y su precio unitario (float).
 b) Mostrar la lista de pedidos en curso: numpedido, numcombo, cantidad, totalapagar.
-4.	Permitir ingresar por teclado el nombre de un producto y de encontrarse, permitir actualizar su precio en el vector de productos/precios.
-5.	Recalcular el valor del dato totalapagar de cada pedido que haya en la lista, buscando el nuevo precio cargado luego de ejecutar la opción del punto 4.
-6.	Salir del programa.
+4.  Permitir ingresar por teclado el nombre de un producto y de encontrarse, permitir actualizar su precio en el vector de productos/precios.
+5.  Recalcular el valor del dato totalapagar de cada pedido que haya en la lista, buscando el nuevo precio cargado luego de ejecutar la opción del punto 4.
+6.  Salir del programa.
 
-•	El código deberá ser correcto y deberá compilar sin advertencias. De lo contrario, probablemente no se corrija. 
-•	El código fuente deberá estar correctamente indentado.
-•	Para el manejo del archivo, deberá hacer las validaciones necesarias para asegurar que no hubo errores.
+•   El código deberá ser correcto y deberá compilar sin advertencias. De lo contrario, probablemente no se corrija. 
+•   El código fuente deberá estar correctamente indentado.
+•   Para el manejo del archivo, deberá hacer las validaciones necesarias para asegurar que no hubo errores.
 */
 
 #include <stdio.h>
