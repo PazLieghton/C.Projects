@@ -23,6 +23,6 @@ int main(){
   seg = inb(P+1);
   printf("%02x",seg);
 
-  printf("\n\n\npene");
+  printf("\n\n\nTest");
   return 0;
 }
