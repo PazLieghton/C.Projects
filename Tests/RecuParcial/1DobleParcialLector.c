@@ -4,13 +4,13 @@
 //Ejemplo de lector doble//
 
 typedef struct nodo_d {
-    char nombre[100];
+    unsigned char nombre[100];
     int edad;
     struct nodo_d* ant, * sig;
 } nodo_d;
 
 int main() {
-    FILE* archivo = fopen("mayores.bin", "rb");
+    FILE* archivo = fopen("datos.bin", "rb");
     if (archivo == NULL) {
         printf("No se pudo abrir el archivo.\n");
         return 1;
