@@ -63,7 +63,7 @@ int main() {
     const char* cad = "El triunfo fue PERDER, la derrota fue GANAR.";
     unsigned char* p = (unsigned char*)cad;
 
-    printf("Paz Lieghton Final Agosto 5\n");
+    printf("Paz Lieghton Final Septiembre 15\n");
 
     int longitud;
     longitud = strlen(cad);
